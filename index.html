@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DoaFácil - Gerenciador de Doações</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header { background-color: #16007b; color: rgb(187, 247, 255); padding: 20px; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #333; }
+        nav ul li { margin: 0; }
+        nav ul li a { display: block; color: white; padding: 14px 20px; text-decoration: none; }
+        nav ul li a:hover, nav ul li a.active { background-color: #575757; }
+        main { padding: 20px; }
+        h1, h2, h3 { color: #ffffff; }
+        footer { background-color: #333; color: white; text-align: center; padding: 10px; position: fixed; width: 100%; bottom: 0; }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>DoaFácil - Gerenciador de Doações</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#inicio" class="active">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#funcionalidades">Funcionalidades</a></li>
+            <li><a href="#cadastro">Cadastrar Doação</a></li>
+            <li><a href="#lista">Listar Doações</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="inicio">
+            <h2>Seja Solidário</h2>
+            <p>Gerencie suas doações de forma fácil, rápida e segura.</p>
+            <a href="#cadastro" class="btn">Fazer uma Doação</a>
+        </section>
+        <section id="sobre" style="display:none;">
+            <h2>Sobre o Projeto</h2>
+            <p><strong>DoaFácil</strong> é um sistema desenvolvido para facilitar o gerenciamento de doações. Aqui, você pode cadastrar doações, visualizar contribuições e ajudar projetos sociais a crescerem.</p>
+        </section>
+        <section id="funcionalidades" style="display:none;">
+            <h2>Funcionalidades</h2>
+            <ul>
+                <li><strong>Cadastro de Doações:</strong> Registre suas doações com segurança e praticidade.</li>
+                <li><strong>Lista de Doações:</strong> Acompanhe todas as doações cadastradas em tempo real.</li>
+                <li><strong>Anonimato:</strong> Opte por realizar doações anônimas, se desejar.</li>
+                <li><strong>Gestão Simples:</strong> Atualize, exclua ou consulte suas doações facilmente.</li>
+            </ul>
+        </section>
+        <section id="cadastro" style="display:none;">
+            <h2>Cadastro de Doação</h2>
+            <p><em>Essa seção será integrada ao backend para inserir doações no banco de dados.</em></p>
+        </section>
+        <section id="lista" style="display:none;">
+            <h2>Lista de Doações</h2>
+            <p><em>Essa seção exibirá as doações cadastradas no banco de dados.</em></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 DoaFácil | Desenvolvido por Marcelle Perez</p>
+    </footer>
+    <script>
+        // Seleciona todos os links do menu
+        const navLinks = document.querySelectorAll('nav ul li a');
+        // Seleciona todas as sections
+        const sections = document.querySelectorAll('main section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // impede comportamento padrão do link
+                // Remove a classe 'active' de todos os links
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Adiciona a classe 'active' ao link clicado
+                this.classList.add('active');
+                // Esconde todas as sections
+                sections.forEach(section => section.style.display = 'none');
+                // Mostra a section correspondente
+                const target = this.getAttribute('href').replace('#', '');
+                const section = document.getElementById(target);
+                if(section) section.style.display = 'block';
+            });
+        });
+        // Mostra a home/início ao carregar a página
+        window.onload = function() {
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById('inicio').style.display = 'block';
+        };
+    </script>
 </body>
 </html>
