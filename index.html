@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoaFácil - Gerenciador de Doações</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
-        header { background-color: #16007b; color: rgb(187, 247, 255); padding: 20px; text-align: center; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #333; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #c4aeff; }
+        header { background-color: #7190f0; color: rgb(190, 187, 255); padding: 20px; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color:#001568; }
         nav ul li { margin: 0; }
-        nav ul li a { display: block; color: white; padding: 14px 20px; text-decoration: none; }
-        nav ul li a:hover, nav ul li a.active { background-color: #575757; }
+        nav ul li a { display: block; color: rgb(255, 255, 255); padding: 14px 20px; text-decoration: none; }
+        nav ul li a:hover, nav ul li a.active { background-color: #001568; }
         main { padding: 20px; }
         h1, h2, h3 { color: #ffffff; }
-        footer { background-color: #333; color: white; text-align: center; padding: 10px; position: fixed; width: 100%; bottom: 0; }
+        footer { background-color: #001568; color: rgb(255, 255, 255); text-align: center; padding: 10px; position: fixed; width: 100%; bottom: 0; }
     </style>
 </head>
 <body>
@@ -33,7 +33,14 @@
         <section id="inicio">
             <h2>Seja Solidário</h2>
             <p>Gerencie suas doações de forma fácil, rápida e segura.</p>
-            <a href="#cadastro" class="btn">Fazer uma Doação</a>
+            <h2>Cadastre sua doação</h2>
+            <form id="doacaoForm">
+                Nome do Doador: <input type="text" name="nome_doador" required>
+                Tipo de Doação: <input type="text" name="tipo_doacao" required>
+                Valor: <input type="number" name="valor" step="0.01" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+
         </section>
         <section id="sobre" style="display:none;">
             <h2>Sobre o Projeto</h2>
