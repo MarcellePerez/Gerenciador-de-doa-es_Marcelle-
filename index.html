@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoaFácil - Gerenciador de Doações</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoaFácil - Gerenciador de Doações</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>DoaFácil - Gerenciador de Doações</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#inicio" class="active">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#funcionalidades">Funcionalidades</a></li>
-            <li><a href="#cadastro">Cadastrar Doação</a></li>
-            <li><a href="#lista">Listar Doações</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="inicio">
-            <h2>Cadastre sua doação</h2>
-            <form id="doacaoForm">
-                <label>Nome do Doador:</label>
-                <input type="text" name="nome_doador" required>
+  <h1>DoaFácil - Gerenciador de Doações</h1>
+  <nav>
+    <a href="#" onclick="mostrarSecao('inicio')">Início</a> |
+    <a href="#" onclick="mostrarSecao('sobre')">Sobre</a> |
+    <a href="#" onclick="mostrarSecao('funcionalidades')">Funcionalidades</a> |
+    <a href="#" onclick="mostrarSecao('cadastrar')">Cadastrar Doação</a> |
+    <a href="#" onclick="mostrarSecao('listar')">Listar Doações</a>
+  </nav>
 
-                <label>Tipo de Doação:</label>
-                <select name="tipo_doacao" id="tipoDoacao" required>
-                    <option value="">Selecione</option>
-                    <option value="Alimentos">Alimentos</option>
-                    <option value="Roupas">Roupas</option>
-                    <option value="Produtos de Higiene">Produtos de Higiene</option>
-                    <option value="Brinquedos">Brinquedos</option>
-                    <option value="Dinheiro">Dinheiro</option>
-                    <option value="Outros">Outros</option>
-                </select>
+  <section id="inicio" class="secao">
+    <h2>Bem-vindo ao DoaFácil!</h2>
+    <p>Gerencie suas doações de forma prática.</p>
+  </section>
 
-                <label>Valor:</label>
-                <input type="number" name="valor" id="valorInput" step="0.01">
+  <section id="sobre" class="secao" style="display: none;">
+    <h2>Sobre</h2>
+    <p>Projeto para gerenciar doações de forma simples e eficaz.</p>
+  </section>
 
-                <button type="submit">Cadastrar</button>
-            </form>
-        </section>
-        <section id="lista">
-            <h2>Lista de Doações</h2>
-            <label for="filtro">Filtrar por tipo:</label>
-            <select id="filtro" onchange="filtrarLista()">
-                <option value="Todos">Todos</option>
-                <option value="Alimentos">Alimentos</option>
-                <option value="Roupas">Roupas</option>
-                <option value="Dinheiro">Dinheiro</option>
-                <option value="Outros">Outros</option>
-            </select>
-            <ul id="listaDoacoes"></ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 DoaFácil | Desenvolvido por Marcelle Perez</p>
-    </footer>
-    <script src="script.js"></script>
+  <section id="funcionalidades" class="secao" style="display: none;">
+    <h2>Funcionalidades</h2>
+    <ul>
+      <li>Cadastrar doações</li>
+      <li>Listar doações</li>
+    </ul>
+  </section>
+
+  <section id="cadastrar" class="secao" style="display: none;">
+    <div class="caixa">
+  <h2>Cadastre sua doação</h2>
+  <form id="formDoacao">
+    <label for="nome">Nome do Doador:</label>
+    <input type="text" name="nome" id="nome" required>
+
+    <label for="tipo_doacao">Tipo de Doação:</label>
+    <select name="tipo_doacao" id="tipo_doacao" required>
+      <option value="">Selecione</option>
+      <option value="Alimentos">Alimentos</option>
+      <option value="Roupas">Roupas</option>
+      <option value="Dinheiro">Dinheiro</option>
+      <option value="Outros">Outros</option>
+    </select>
+
+    <label for="valor">Valor:</label>
+    <input type="number" name="valor" id="valor">
+
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+
+
+  </section>
+
+  <section id="listar" class="secao" style="display: none;">
+    <h2>Lista de Doações</h2>
+    <ul id="listaDoacoes"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DoaFácil | Desenvolvido por Marcelle Perez</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

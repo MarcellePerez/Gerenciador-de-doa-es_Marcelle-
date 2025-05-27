@@ -1,99 +1,100 @@
 /* style.css - MarcellePerez */
 
-/* Reset básico */
-h2 {
-    color: #000000;
+/* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente (se quiser) */
-}
-
-main section {
-    max-width: 500px; /* Limita largura */
-    width: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
+/* Estilo do body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
 }
 
-header {
-    background-color: #16007b;
-    color: rgb(90, 118, 255);
-    padding: 20px;
-    text-align: center;
+/* Títulos */
+h1 {
+  color: #220080;
+  margin-bottom: 10px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #333;
+h2 {
+  color: #333;
+  margin-bottom: 10px;
 }
 
-nav ul li {
-    margin: 0;
+/* Navegação */
+nav {
+  margin-bottom: 20px;
 }
 
-nav ul li a {
-    display: block;
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
+nav a {
+  text-decoration: none;
+  color: #220080;
+  font-weight: bold;
+  margin: 0 10px;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #575757;
+nav a:hover {
+  color: #150050;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Caixa card */
+.card {
+  background: #fff;
+  padding: 20px 30px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 500px;
 }
 
-h1, h2, h3 {
-    color: #16007b;
+.card h2 {
+  color: #1a0dab;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Formulário */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-table th, table td {
-    border: 1px solid #333;
-    padding: 10px;
-    text-align: left;
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
 }
 
-button {
-    background-color: #16007b;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button:hover {
-    background-color: #575757;
+/* Botão */
+button[type="submit"] {
+  background-color: #220080;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #150050;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+  }
 }
