@@ -1,11 +1,3 @@
-/* style.css - MarcellePerez */
-
-/* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Estilo do body */
 body {
   font-family: Arial, sans-serif;
@@ -17,11 +9,13 @@ body {
 h1 {
   color: #220080;
   margin-bottom: 10px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
 }
 
 h2 {
   color: #333;
   margin-bottom: 10px;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
 /* Navegação */
@@ -90,6 +84,22 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #150050;
+  transform: scale(1.05);
+}
+
+/* Mensagem de confirmação */
+#mensagem {
+  margin-top: 10px;
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Transição suave nas seções */
+.secao {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 /* Responsivo */

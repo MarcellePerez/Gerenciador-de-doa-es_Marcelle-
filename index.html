@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1>DoaFácil - Gerenciador de Doações</h1>
+
   <nav>
     <a href="#" onclick="mostrarSecao('inicio')">Início</a> |
     <a href="#" onclick="mostrarSecao('sobre')">Sobre</a> |
@@ -19,50 +20,61 @@
   <section id="inicio" class="secao">
     <h2>Bem-vindo ao DoaFácil!</h2>
     <p>Gerencie suas doações de forma prática.</p>
+    <img src="doacao2.jpg" alt="Imagem ilustrativa de doações" width="300">
   </section>
 
-  <section id="sobre" class="secao" style="display: none;">
+  <section id="sobre" class="secao">
     <h2>Sobre</h2>
     <p>Projeto para gerenciar doações de forma simples e eficaz.</p>
+    <img src="doacao1.jpg" alt="Imagem representando ajuda solidária" width="300">
   </section>
 
-  <section id="funcionalidades" class="secao" style="display: none;">
+  <section id="funcionalidades" class="secao">
     <h2>Funcionalidades</h2>
     <ul>
       <li>Cadastrar doações</li>
       <li>Listar doações</li>
+      <li>Excluir doações</li>
     </ul>
+    <img src="doacao3.jpg" alt="Funcionalidades do sistema" width="300">
   </section>
 
-  <section id="cadastrar" class="secao" style="display: none;">
-    <div class="caixa">
-  <h2>Cadastre sua doação</h2>
-  <form id="formDoacao">
-    <label for="nome">Nome do Doador:</label>
-    <input type="text" name="nome" id="nome" required>
+  <section id="cadastrar" class="secao">
+    <div class="card">
+      <h2>Cadastre sua doação</h2>
+      <form id="formDoacao">
+        <div class="form-group">
+          <label for="nome">Nome do Doador:</label>
+          <input type="text" name="nome" id="nome" required placeholder="Digite seu nome">
+        </div>
 
-    <label for="tipo_doacao">Tipo de Doação:</label>
-    <select name="tipo_doacao" id="tipo_doacao" required>
-      <option value="">Selecione</option>
-      <option value="Alimentos">Alimentos</option>
-      <option value="Roupas">Roupas</option>
-      <option value="Dinheiro">Dinheiro</option>
-      <option value="Outros">Outros</option>
-    </select>
+        <div class="form-group">
+          <label for="tipo_doacao">Tipo de Doação:</label>
+          <select name="tipo_doacao" id="tipo_doacao" required>
+            <option value="">Selecione</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Roupas">Roupas</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
 
-    <label for="valor">Valor:</label>
-    <input type="number" name="valor" id="valor">
+        <div class="form-group">
+          <label for="valor">Valor (se for dinheiro):</label>
+          <input type="number" name="valor" id="valor" placeholder="Digite o valor" disabled>
+        </div>
 
-    <button type="submit">Cadastrar</button>
-  </form>
-</div>
-
-
+        <button type="submit">Cadastrar</button>
+      </form>
+      <div id="mensagem"></div>
+    </div>
   </section>
 
-  <section id="listar" class="secao" style="display: none;">
+  <section id="listar" class="secao">
     <h2>Lista de Doações</h2>
+    <p>(Clique duas vezes em uma doação para removê-la)</p>
     <ul id="listaDoacoes"></ul>
+    <img src="doacao4.jpg" alt="Lista de doações" width="300">
   </section>
 
   <footer>
@@ -71,5 +83,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
